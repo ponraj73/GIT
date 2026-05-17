@@ -7,8 +7,6 @@ This repository contains my Git learning notes and practice files.
 - notes.md
 - README.md
 
-# GIT Learning
-
 ## What is GIT?
 
 GIT is a Distributed Version Control System (VCS).
@@ -327,4 +325,57 @@ This command:
 
 Use carefully because changes will be lost.
 
+---
+
+# Branch in GIT
+
+A branch is a separate copy of the project used for development or testing.
+
+The `main` branch usually contains stable and working code.
+
+If we directly modify the `main` branch, bugs or errors may affect the project.  
+So developers create separate branches to develop new features safely.
+
+After testing, the changes can be merged back into the `main` branch.
+
+---
+
+# Create a Branch
+
+```bash
+git branch <branch_name>
+````
+---
+
+branch_name = dev
+# Switch to a Branch
+
+```bash 
+git checkout dev
+```
+
+This moves from the current branch to the `dev` branch.
+
+---
+
+# Create and Switch Branch Directly
+
+```bash
+git checkout -b <branch_name>
+```
+
+This command:
+
+* creates a new branch
+* automatically switches to that branch
+
+---
+
+# View All Branches
+
+```bash 
+git branch
+```
+
+The current branch will be marked with `*`.
 ---

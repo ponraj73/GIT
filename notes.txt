@@ -102,3 +102,13 @@ this command is used when we need to go to the previos versions like 2 years bac
     git checkout main           -> By this we come to our present version so all the files adn folders are present here
 
     git checkout -f main        -> this is a force checkout that discard all the changes on the files adn come back to the main
+
+### Branch
+
+the branch is nothing but a copy of a main branch and used to modify the copies....because our main branch is workng fine...if we change some data and there might be affect the working condition of the mainbanch
+so for this we keep the working things on the main branch and keep the develop things on a devlop or any other branch...
+
+    git branch < Branch name >      -> this creates a branch
+    if we need to go to that branch we need to checkout
+
+    git checkout -b < Branch name > -> this directky creates a branch and checkout automativally to that branch

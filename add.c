@@ -8,5 +8,6 @@ int main(){
 
     sum = var1 + var2;
 
+    printf("\r\n the sum of the two numbers %d adn %d is %d \r\n", var1, var2, sum);
     return 0;
 }
