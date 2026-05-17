@@ -82,18 +82,6 @@ we tell the git to note all the chnages made untill for that we need to do a com
  create mode 100644 add.c
 '''
 
-### GIT log
-
-    git log
-this command is used to view what are the changes made untill now and also it shows the commit id
-'''
-commit 24d4816b1e588d8277782b93d1de88a2e359a6aa (HEAD -> main)
-Author: ponraj73 <ponraj5656@gmail.com>
-Date:   Sun May 17 14:42:25 2026 +0530
-
-    adding add.c file
-'''
-
 ### go to the previous files
 this command is used when we need to go to the previos versions like 2 years back or 22 days back like that...
 
