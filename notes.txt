@@ -1,0 +1,104 @@
+### GIT Learning
+GIT is a Distributed Version Control System (VCS). so this keep tracks the changes that made by whom adn where the changes adn what are the files are modified , newly added or deleted..like that
+
+REPO    -> Repository (Basically a folder)
+this contains a .git folder which is a hidden folder that contains all the detalis like the tracking and all the modified details 
+
+GIT is created by Linus Torwals...
+
+### Difference between  the GIT and GITHUB
+--------------------------------------------------------------------
+    GIT                         |           GITHUB                  |
+--------------------------------------------------------------------
+It is a tool that handles the   |  it is a platform that we can store all our code in the github platform.  
+the version details like the    |it will be easy if we are working with multiple pepoles in a project....
+changes made by whom , where,   |so that has the actual project we can take a copy of the project and work and made changes
+and when and what arethe files  | so not all companies use github some of them use BitBucket and AWS codecommit
+been modified                   | if we store our code in the github then we called this as remote repository
+
+### Creating Git config
+1. We need to set the user name
+
+    git config --global user.name "ponraj73"
+
+2. We need to set the email id 
+
+    git config --global user.email "emailid@gmail.com"
+
+3. we need to set the default branch name "main"
+
+    git config --global init.defaultBranch main
+
+### Initialize GIT repo
+for inintializing a git repo we need to do this
+    git init
+    (response : Initialized empty Git repository in C:/Users/vprak/Desktop/Ponraj/Learning/Git/.git/)
+    Now we initialized a git repo. we can see a .git floder it is a hidden folder....the chnages that we made are keep track by this folder
+
+### Creating files on this repo
+
+ok now i create a file adn add some code on it ...the file shows like U ..
+
+which means U -> Untracked...so the git doesnt track that file
+
+### to get the status 
+
+    git status
+this cmd shows the status of the repo right now...and we can able to see the details like what branch is this and if there is previos commits are there or not ...and what are the files are been tracked / untracked
+'''
+PS C:\Users\vprak\Desktop\Ponraj\Learning\Git> git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        add.c
+        readme.md
+
+'''
+
+### Adding a file to the repo
+    git add add.c 
+after doinf this the Untracked changes to A (U -> A)
+'''
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   add.c
+'''
+so this tell the git to ypu need to track the chnages in the file
+
+so for adding only one file this is ok..but in he project we need to add multiple file for that we need to do
+    git add .
+this will add all the files
+
+### Commit a file
+we tell the git to note all the chnages made untill for that we need to do a commit
+
+    git commit -m "adding a new file"
+'''
+[main (root-commit) 24d4816] adding add.c file
+ 1 file changed, 12 insertions(+)
+ create mode 100644 add.c
+'''
+
+### GIT log
+
+    git log
+this command is used to view what are the changes made untill now and also it shows the commit id
+'''
+commit 24d4816b1e588d8277782b93d1de88a2e359a6aa (HEAD -> main)
+Author: ponraj73 <ponraj5656@gmail.com>
+Date:   Sun May 17 14:42:25 2026 +0530
+
+    adding add.c file
+'''
+
+### go to the previous files
+this command is used when we need to go to the previos versions like 2 years back or 22 days back like that...
+
+    git checkout < commit id >  -> after doing this we go to that commit and the files present in that commit will show and other files wont show....
+
+    git checkout main           -> By this we come to our present version so all the files adn folders are present here
+
+    git checkout -f main        -> this is a force checkout that discard all the changes on the files adn come back to the main
