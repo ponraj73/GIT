@@ -451,3 +451,122 @@ This command:
 
 ---
 
+# Git Reset
+
+`git reset` is used to undo changes or move back to a previous commit.
+
+It can:
+
+- unstage files
+- remove commits
+- restore old states
+
+---
+
+# Unstage a File
+
+Suppose we added a file using:
+
+```bash
+git add notes.txt
+````
+
+To remove it from staging:
+
+```bash
+git reset notes.txt
+```
+
+Now the file is removed from staging, but the file content is still safe.
+
+---
+
+# Reset to Previous Commit
+
+```bash
+git reset <commit_id>
+```
+
+Example:
+
+```bash id="w2z4lf"
+git reset 24d4816
+```
+
+This moves HEAD to that commit.
+
+---
+
+# Soft Reset
+
+```bash
+git reset --soft <commit_id>
+```
+
+* removes commits
+* keeps changes in staging area...so all the changes are staged changes
+
+Useful when we want to recommit changes.
+
+---
+
+# Mixed Reset (Default)
+
+```bash 
+git reset --mixed <commit_id>
+```
+
+OR simply:
+
+```bash
+git reset <commit_id>
+```
+
+* removes commits
+* keeps file changes locally
+* unstages files
+
+---
+
+# Hard Reset
+
+```bash id="1z3zmc"
+git reset --hard <commit_id>
+```
+
+This:
+
+* removes commits
+* removes staged changes
+* removes local file changes
+
+⚠️ Changes will be lost permanently.
+
+Use carefully.
+
+---
+
+# Example Flow
+
+```text id="8k5q4w"
+git add .
+    ↓
+git commit
+    ↓
+git reset --soft HEAD~1
+```
+
+This removes the last commit but keeps the changes.
+
+---
+
+# Useful Commands
+
+| Command                   | Purpose                                 |
+| ------------------------- | --------------------------------------- |
+| `git reset file.txt`      | Unstage a file                          |
+| `git reset --soft HEAD~1` | Remove last commit, keep staged changes |
+| `git reset HEAD~1`        | Remove last commit, keep local changes  |
+| `git reset --hard HEAD~1` | Remove last commit and all changes      |
+
+
