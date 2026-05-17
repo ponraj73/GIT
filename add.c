@@ -5,6 +5,11 @@ int add(int arg1 , int arg2){
     return arg1 + arg2;
 }
 
+/* Non priority task */
+int sub(int a, int b){
+    return a - b;
+}
+
 /* Important task */
 int calculate(int a, int b, int func){
     switch(func){
@@ -12,12 +17,11 @@ int calculate(int a, int b, int func){
             add(a, b);
             break;
         case 2:
-            return a - b;
+            sub(a, b);
             break;
         default:
             printf("\r\n Enter a valid operation\r\n");
     }
-}
 
 int main(){
 
@@ -30,6 +34,6 @@ int main(){
 
     printf("\r\n the sum of the two numbers %d adn %d is %d \r\n", var1, var2, sum);
     printf("\r\n The differnce between %d and %d is %d \r\n", var1, var2, diff);
-    
+
     return 0;
 }
