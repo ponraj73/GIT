@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 
-/* Function */
+/* Subtraction Function */
 int sub(int a, int b){
     return a - b;
 }
