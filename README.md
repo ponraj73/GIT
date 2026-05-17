@@ -7,8 +7,6 @@ This repository contains my Git learning notes and practice files.
 - notes.md
 - README.md
 
-# GIT Learning
-
 ## What is GIT?
 
 GIT is a Distributed Version Control System (VCS).
@@ -328,3 +326,128 @@ This command:
 Use carefully because changes will be lost.
 
 ---
+
+# Branch in GIT
+
+A branch is a separate copy of the project used for development or testing.
+
+The `main` branch usually contains stable and working code.
+
+If we directly modify the `main` branch, bugs or errors may affect the project.  
+So developers create separate branches to develop new features safely.
+
+After testing, the changes can be merged back into the `main` branch.
+
+---
+
+# Create a Branch
+
+```bash
+git branch <branch_name>
+````
+---
+
+branch_name = dev
+# Switch to a Branch
+
+```bash 
+git checkout dev
+```
+
+This moves from the current branch to the `dev` branch.
+
+---
+
+# Create and Switch Branch Directly
+
+```bash
+git checkout -b <branch_name>
+```
+
+This command:
+
+* creates a new branch
+* automatically switches to that branch
+
+---
+
+# View All Branches
+
+```bash 
+git branch
+```
+
+The current branch will be marked with `*`.
+---
+
+# Push Code to Remote Repository
+
+After committing changes locally, we need to push them to the remote repository (GitHub).
+
+---
+
+## Push a Branch for the First Time
+
+```bash
+git push --set-upstream origin <branch_name>
+````
+
+OR
+
+```bash
+git push -u origin <branch_name>
+```
+
+Example:
+
+```bash
+git push -u origin develop
+```
+
+This command:
+
+* pushes the branch to GitHub
+* connects the local branch with the remote branch
+
+After this, we can simply use:
+
+```bash id="v8p1qm"
+git push
+```
+
+to push future changes.
+
+---
+
+## Compare & Merge
+
+After pushing code to GitHub:
+
+* create a Pull Request (PR)
+* compare changes
+* merge the branch into `main`
+
+This is commonly used in team projects.
+
+---
+
+# Pull Latest Changes
+
+After merging changes on GitHub, the updates will not automatically appear in the local repository.
+
+So we need to pull the latest changes.
+
+Command:
+
+```bash id="9zq1mk"
+git pull
+```
+
+This command:
+
+* downloads latest changes from GitHub
+* updates local files and folders
+* syncs local repository with remote repository
+
+---
+
