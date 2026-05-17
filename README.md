@@ -570,3 +570,87 @@ This removes the last commit but keeps the changes.
 | `git reset --hard HEAD~1` | Remove last commit and all changes      |
 
 
+# Git Revert
+
+`git revert` is used to undo a commit safely.
+
+Instead of deleting the commit, Git creates a new commit that reverses the changes.
+
+This is safer than `git reset`, especially in shared projects.
+
+---
+
+# Revert a Commit
+
+```bash
+git revert <commit_id>
+````
+
+Example:
+
+```bash id="gm4o8i"
+git revert c51da44
+```
+
+This creates a new commit that removes the changes made by that commit.
+
+---
+
+# What Happens?
+
+Suppose:
+
+```text id="z0m0s2"
+Commit A → added notes
+```
+
+After revert:
+
+```text id="k3t2z7"
+Commit B → removed notes added by Commit A
+```
+
+So the history is preserved.
+
+---
+
+# Why Use Revert?
+
+Use `git revert` when:
+
+* code is already pushed to GitHub
+* working in a team project
+* we want safe undo without deleting history
+
+---
+
+# Difference Between Reset and Revert
+
+| Git Reset                      | Git Revert                |
+| ------------------------------ | ------------------------- |
+| Removes commit history         | Keeps commit history      |
+| Can permanently delete changes | Safely undoes changes     |
+| Used mostly locally            | Used in shared projects   |
+| Changes branch history         | Creates a new undo commit |
+
+---
+
+# View Commit IDs
+
+```bash id="3um3x8"
+git log --oneline
+```
+
+---
+
+# Simple Workflow
+
+```text id="vv1a5j"
+git log
+    ↓
+copy commit id
+    ↓
+git revert <commit_id>
+    ↓
+new revert commit created
+```
