@@ -112,3 +112,22 @@ so for this we keep the working things on the main branch and keep the develop t
     if we need to go to that branch we need to checkout
 
     git checkout -b < Branch name > -> this directky creates a branch and checkout automativally to that branch
+
+### push the code to the remote repo
+
+for this we need to use the upstream
+    git push --set-upstream origin < branch name >
+
+    or 
+
+    git push -u origin < branch  name >
+so after doing this our changes are pushed to the remote and repo...and then we need to do the compare & merge
+after doing this we can use just
+    git push
+
+### Pull
+so after merging the changes those are wont appear on the local main...so we need to do git Pull
+
+    git pull 
+
+this will download all the files adn folders with the latest changes
