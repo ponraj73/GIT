@@ -22,6 +22,7 @@ int calculate(int a, int b, int func){
         default:
             printf("\r\n Enter a valid operation\r\n");
     }
+}
 
 int main(){
 
